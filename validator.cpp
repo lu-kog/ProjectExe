@@ -106,10 +106,12 @@ bool hasValidOperatorUsage(const std::string &expr)
             bool afterCondition = (expr[i + 1] == '(') || (isdigit(expr[i + 1])) || (expr[i + 1] == '-');
 
             if (!(beforeCondition && afterCondition)){
+                std::cout << "Invalid operator usage: " <<i<< std::endl;
                 return false;
             }
             else if ((expr[i + 1] == '-') && !isdigit(expr[i + 2]))
             {
+                std::cout << "Invalid operator usage: " <<i<< std::endl;
                 return false;
             }
             
